@@ -1,0 +1,32 @@
+{% extends "common/sidebar.html" %}
+
+
+{% block site_title %}サイトのタイトル{% endblock %}
+
+
+{% block extra_head %}
+<script>console.log("追加のcssやjsがあればここにまとめて書く");</script>
+{% endblock %}
+
+
+
+{% block page_title %}ページのタイトル{% endblock %}
+
+{% block main %}
+
+<div>サイトの本文</div>
+
+
+
+<!--ユーザーがログイン済みの場合、userのis_authenticated属性値で判定できる。-->
+{% if user.is_authenticated %}
+<div>こんにちは{{ user.get_username }}さん</div>
+{% else%}
+<div>ログインしてください</div>
+{% endif %}
+
+
+
+
+{% endblock %}
+
